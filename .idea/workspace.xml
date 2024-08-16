@@ -4,64 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c232312b-4d22-4680-a490-022c3953b45c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/personalCloset.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clothing.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/05699146700-e1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/093eaa2fa6584a3daaa61c5fe0d052d9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/19821983_44540294_480.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/2714521220m7_zm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/580_6ca9ebf610112ea320c1d0848afca651_size6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/8720108379182_fc0_large.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/ClassicSweatsGrey_1024x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/ELN-EL0853_A_Black_0_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/Emporio-Armani-white-shirt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/Grey_Boys_Trousers_68badaae-7d05-440f-a077-36c5f0e05618_480x480.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/P0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/P02-05-NS07022_2000x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/SS01-01-TOP-0123-SSC_300x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/Screenshot-2024-07-12-at-11.23.58.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/acf99fe1e3cb8d8c0fa3fb953fc9f7a4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_05699146700-e1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_093eaa2fa6584a3daaa61c5fe0d052d9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_19821983_44540294_480.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_2714521220m7_zm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_580_6ca9ebf610112ea320c1d0848afca651_size6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_8720108379182_fc0_large.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_ClassicSweatsGrey_1024x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_ELN-EL0853_A_Black_0_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_Emporio-Armani-white-shirt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_Grey_Boys_Trousers_68badaae-7d05-440f-a077-36c5f0e05618_480x480.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_P0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_P02-05-NS07022_2000x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_SS01-01-TOP-0123-SSC_300x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_Screenshot-2024-07-12-at-11.23.58.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_acf99fe1e3cb8d8c0fa3fb953fc9f7a4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_ce6f38b04229752307ac1f9849f9a610.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_elydp00112_element,f_bnt0_frt1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_images" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_m96219804075_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_radstone-mens-merino-wool-jumper-black-grape-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_s-l500.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_up-covrment-school-shoes-500x500.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/bg_white-tshirt-template-wooden-background_1409-4097.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/ce6f38b04229752307ac1f9849f9a610.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/elydp00112_element,f_bnt0_frt1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/images" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/m96219804075_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/radstone-mens-merino-wool-jumper-black-grape-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/s-l500.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/up-covrment-school-shoes-500x500.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/white-tshirt-template-wooden-background_1409-4097.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    <list default="true" id="c232312b-4d22-4680-a490-022c3953b45c" name="Changes" comment="heck yeah">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,9 +23,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2kihIWGI53PwB1BNSsKUQ0h8PjF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -96,7 +40,8 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "Python.app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "preferences.updates"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -123,9 +68,20 @@
       <option name="presentableId" value="Default" />
       <updated>1723772224714</updated>
     </task>
+    <task id="LOCAL-00001" summary="heck yeah">
+      <option name="closed" value="true" />
+      <created>1723824615170</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723824615170</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="heck yeah" />
+    <option name="LAST_COMMIT_MESSAGE" value="heck yeah" />
   </component>
 </project>
