@@ -1,0 +1,56 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+h1, h2, h5 {
+    color: #000000;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-title, .card-text, .btn {
+    color: #000000;
+}
+
+.upload-card {
+    background-color: #ffffff;
+    border: 2px dashed #000000;
+}
+
+.upload-card:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-primary, .btn-dark {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-dark:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+.list-group-item {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+}
+
+.list-group-item-action:hover {
+    background-color: #f0f0f0;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+}
+

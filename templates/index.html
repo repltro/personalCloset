@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <title>Fitted Closet Design</title>
+    <style>
+        .card-img-top {
+            height: 200px;
+            object-fit: contain; /* Ensure the image is fully visible */
+        }
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-body {
+            flex-grow: 1;
+        }
+        .upload-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            border: 2px dashed #000000;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .upload-card:hover {
+            background-color: #f0f0f0;
+        }
+        .tooltip-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            white-space: nowrap;
+            z-index: 1000;
+            transform: translateY(10px);
+        }
+        .tooltip-content .edit-icon {
+            cursor: pointer;
+            color: #ffffff;
+            margin-left: 5px;
+        }
+        .card:hover .tooltip-content {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .card-img-top {
+                height: 150px; /* Adjust height for smaller screens */
+                object-fit: contain; /* Ensure the image is fully visible */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center text-black">Fitted Closet Design</h1>
+
+        <!-- Clothing Items Section -->
+        <div id="clothingItems" class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card upload-card" data-toggle="modal" data-target="#uploadModal">
+                    <div class="card-body text-center">
+                        <h5 class="text-black">Upload New Item</h5>
+                        <button class="btn btn-dark">Upload</button>
+                    </div>
+                </div>
+            </div>
+            {% for item in items %}
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="showTooltip(event, {{ item[0] }})" onmouseout="hideTooltip()">
+                    <img src="{{ url_for('static', filename='uploads/' + item[1]) }}" class="card-img-top" alt="Clothing Item">
+                    <div class="tooltip-content" id="tooltip-{{ item[0] }}">
+                        <div>Category: {{ item[3] }}</div>
+                        <div>Market Price: ${{ item[5] }}</div>
+                        <div>Color: {{ item[6] }}</div>
+                        <div>Style: {{ item[7] }}</div>
+                        <div>Name: {{ item[2] }}</div>
+                        <span class="edit-icon" onclick="editItemInfo({{ item[0] }})">✎</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-black">{{ item[2] }}</h5>
+                        <p class="card-text text-black">Category: {{ item[3] }}</p>
+                        <select class="form-control" onchange="editItemType({{ item[0] }}, this.value)">
+                            {% for type in types %}
+                            <option value="{{ type }}" {% if type == item[2] %}selected{% endif %}>{{ type }}</option>
+                            {% endfor %}
+                        </select>
+                        <button class="btn btn-sm btn-dark mt-2" onclick="toggleFavorite({{ item[0] }})">
+                            {% if item[4] == 1 %}
+                            Unfavorite
+                            {% else %}
+                            Favorite
+                            {% endif %}
+                        </button>
+                        <button class="btn btn-sm btn-danger mt-2" onclick="deleteItem({{ item[0] }})">Delete</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Favorites Section -->
+        <div id="favoritesSection" class="mt-5">
+            <h2 class="text-center text-black">Favorites</h2>
+            <div class="row">
+                {% for item in favorites %}
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='uploads/' + item[1]) }}" class="card-img-top" alt="Favorite Item">
+                        <div class="card-body">
+                            <h5 class="card-title text-black">{{ item[2] }}</h5>
+                            <p class="card-text text-black">Category: {{ item[3] }}</p>
+                            <button class="btn btn-sm btn-dark mt-2" onclick="toggleFavorite({{ item[0] }})">Unfavorite</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-black" id="uploadModalLabel">Upload Clothing Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="fileInput" class="text-black">Select Image File</label>
+                            <input type="file" name="file" id="fileInput" class="form-control-file">
+                        </div>
+                        <div class="form-group">
+                            <label for="urlInput" class="text-black">Or Enter Image URL</label>
+                            <input type="url" name="url" id="urlInput" class="form-control" placeholder="Enter image URL">
+                        </div>
+                        <div class="form-group">
+                            <label for="typeSelect" class="text-black">Clothing Type</label>
+                            <select name="type" id="typeSelect" class="form-control">
+                                {% for type in types %}
+                                <option value="{{ type }}">{{ type }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Upload</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let hoverTimeout;
+
+        function showTooltip(event, itemId) {
+            hoverTimeout = setTimeout(function() {
+                document.getElementById(`tooltip-${itemId}`).style.display = 'block';
+            }, 1000); // Show tooltip after 1 second
+        }
+
+        function hideTooltip() {
+            clearTimeout(hoverTimeout);
+            const tooltips = document.querySelectorAll('.tooltip-content');
+            tooltips.forEach(tooltip => tooltip.style.display = 'none');
+        }
+
+        function editItemInfo(index) {
+            const category = prompt("Enter new category:");
+            const marketPrice = prompt("Enter new market price:");
+            const color = prompt("Enter new color:");
+            const style = prompt("Enter new style:");
+            const name = prompt("Enter new name:");
+
+            if (category && marketPrice && color && style && name) {
+                $.ajax({
+                    url: `/edit_item/${index}`,
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ category: category, marketPrice: marketPrice, color: color, style: style, name: name }),
+                    success: function(response) {
+                        if (response.success) {
+                            location.reload();
+                        } else {
+                            alert('Failed to update item info. Please try again.');
+                        }
+                    }
+                });
+            }
+        }
+
+        function editItemType(index, type) {
+            $.ajax({
+                url: `/edit/${index}`,
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ type: type }),
+                success: function (response) {
+                    if (response.success) {
+                        location.reload();
+                    }
+                }
+            });
+        }
+
+        function toggleFavorite(index) {
+            $.ajax({
+                url: `/favorite/${index}`,
+                type: 'POST',
+                success: function (response) {
+                    if (response.success) {
+                        location.reload();
+                    }
+                }
+            });
+        }
+
+        function deleteItem(index) {
+            if (confirm("Are you sure you want to delete this item?")) {
+                $.ajax({
+                    url: `/delete/${index}`,
+                    type: 'POST',
+                    success: function (response) {
+                        if (response.success) {
+                            location.reload();
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
